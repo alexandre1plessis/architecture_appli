@@ -5,37 +5,46 @@ include '../Controller/BDDController.php';
 
 class TaskController
 {
-    public function getAllTask(): array
+    public static function getAllTask(): array
     {
         return [];
     }
 
-    public function getTaskById(): ITask
+    public static function getTaskById(): ITask
     {
         return new Task();
     }
 
-    public function getTaskByProject(): array
+    public static function getTaskByProject(): array
     {
         return [];
     }
 
-    public function getTaskByColor(): array
+    public static function getTaskByColor(): array
     {
         return [];
     }
 
-    public function getTimeByDay($day): string
+    public static function getTimeByDay($day): string
     {
         return '';
     }
 
-     public function getTaskByDay(string $date): array
+     public static function getTaskByDay(string $date): array
      {
          return [];
      }
 
-    public function setTask(string $name,string $description = '',int $id_project = null,int $id_task_parent = null,string $color = '',int $order = null)
+    /**
+     * @param string $name
+     * @param string $description
+     * @param int|null $id_project
+     * @param int|null $id_task_parent
+     * @param string $color
+     * @param int|null $order
+     * @return bool|mysqli_result
+     */
+    public static function setTask(string $name, string $description = '', int $id_project = null, int $id_task_parent = null, string $color = '', int $order = null)
     {
         $bdd = BDDController::getInstance();
         $connect = $bdd->getConnect();
@@ -49,7 +58,7 @@ class TaskController
         return $connect->query($sql);
     }
 
-    public function deleteTask($id)
+    public static function deleteTask($id)
     {
         $bdd = BDDController::getInstance();
         $connect = $bdd->getConnect();
@@ -57,7 +66,7 @@ class TaskController
         return $connect->query($sql);
     }
 
-    public function updateTask($id,string $name,string $description = '',int $id_project = null,int $id_task_parent = null,string $color = '',int $order = null)
+    public static function updateTask($id,string $name,string $description = '',int $id_project = null,int $id_task_parent = null,string $color = '',int $order = null)
     {
         $bdd = BDDController::getInstance();
         $connect = $bdd->getConnect();
