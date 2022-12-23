@@ -1,11 +1,12 @@
 <?php
 
-class Task implements ITask
+class SubTask implements ITask
 {
     private $id;
     public $name;
     public $description;
     public $id_projet;
+    public $id_task_parent;
     public $color;
     public $ordre;
 
@@ -23,5 +24,4 @@ class Task implements ITask
     {
         // TODO: Implement insert() method.
     }
-
 }

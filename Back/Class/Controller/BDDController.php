@@ -34,6 +34,7 @@ class BDDController
 
     public function getConnect()
     {
+
         if(!isset(self::$connect))
         {
             self::$connect = self::connectBDD();
