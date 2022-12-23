@@ -29,10 +29,22 @@ export class AddTaskComponent implements OnInit {
   getParentTask(idParent: number) {
     this.parentTask = idParent;
   }
+  getTask(task: Task) {
+    this.task = task;
+  }
 
   addTask() {
+    if (!this.task.name) { this.task.name = 'Tache' }
+    if (!this.task.description) { this.task.description = '' }
+    if (!this.task.idProjet) { this.task.idProjet= 0 }
+    if (!this.task.color) { this.task.color = '#FFF' }
+    if (!this.task.ordre) { this.task.ordre = 0 }
+    
     if (this.parentTask) {
-      this.subtaskService.setTask
+      this.subtaskService.setSubtask(this.task.name, this.task.idProjet, this.parentTask, this.task.description, this.task.color, this.task.ordre);
+    }
+    else {
+      this.taskService.setTask(this.task.name, this.task.idProjet, this.task.description, this.task.color, this.task.ordre);
     }
   }
 

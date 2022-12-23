@@ -38,7 +38,7 @@ export class TaskService implements ITask {
     */
     return task;
   }
-  getTaskByProject(id_projet: number): Task[] {
+  getTaskByProject(idProjet: number): Task[] {
     let tabTask: Task[] = [];
     /*
     * Recuperation des taches d'un projet
@@ -66,10 +66,9 @@ export class TaskService implements ITask {
     * Sauvegarder le temps passe sur une tache
     */
   }
-  // METHODES PERSONNELLES
+
   updateTask(id: number, name: string, description: string, color: string): void {
   }
-  setTask(name: string, description: string, color: string, ordre: number): void {
+  setTask(name: string, idProjet:number, description: string, color: string, ordre: number): void {
   }
-
 }
