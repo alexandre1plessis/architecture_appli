@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e1d4602-eb9e-4618-8b36-3a35301b46dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Docs/Spécifications techniques.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/Spécifications techniques.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/Class/Modele/Project.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Back/Class/Modele/SubTask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/Class/Controller/BDDController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/Class/Controller/BDDController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/Class/Controller/TaskController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/Class/Controller/TaskController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/Class/Modele/ITask.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/Class/Modele/ITask.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Back/Class/Modele/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/Back/Class/Modele/Task.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +50,7 @@
       <updated>1671702418248</updated>
       <workItem from="1671702432483" duration="2476000" />
       <workItem from="1671715460033" duration="4456000" />
-      <workItem from="1671784009609" duration="1150000" />
+      <workItem from="1671784009609" duration="7726000" />
     </task>
     <servers />
   </component>
