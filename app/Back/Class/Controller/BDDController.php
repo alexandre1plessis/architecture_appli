@@ -10,6 +10,9 @@ class BDDController
 
     protected function __construct() { }
 
+    /**
+     * @return BDDController
+     */
     public static function getInstance(): BDDController
     {
         $cls = static::class;
@@ -21,6 +24,9 @@ class BDDController
         return self::$instances[$cls];
     }
 
+    /**
+     * @return mysqli|string
+     */
     private static function connectBDD()
     {
         $conn = new mysqli(self::$servername, self::$ursername, self::$password);
@@ -32,6 +38,9 @@ class BDDController
         return $conn;
     }
 
+    /**
+     * @return mysqli|string|null
+     */
     public function getConnect()
     {
 
@@ -43,11 +52,18 @@ class BDDController
         return self::$connect;
     }
 
+    /**
+     * @param string $psw
+     * @return void
+     */
     public function setPasswordBDD(string $psw)
     {
         $this->password = $psw;
     }
 
+    /**
+     * @return void
+     */
     public function closeBDD()
     {
         if(isset(self::$connect))
