@@ -39,12 +39,7 @@ cd [my-app-name]
 composer start
 ```
 
-Or you can use `docker-compose` to run the app with `docker`, so you can run these commands:
-```bash
-cd [my-app-name]
-docker-compose up -d
-```
-After that, open `http://localhost:8080` in your browser.
+After that, open `http://localhost:8080` in your browser. If you want to use another dock, you can change it at the end of the composer.json
 
 Run this command in the application directory to run the test suite
 
