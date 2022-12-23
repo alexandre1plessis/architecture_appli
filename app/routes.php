@@ -20,8 +20,60 @@ return function (App $app) {
         return $response;
     });
 
-    $app->group('/users', function (Group $group) {
-        $group->get('', ListUsersAction::class);
-        $group->get('/{id}', ViewUserAction::class);
+    //routes qui renvoit la liste des tâches
+    $app->get('/tasks', function (Request $request, Response $response) {
+        $response->getBody()->write('Liste des tâches');
+        return $response;
     });
+
+    //routes qui renvoit une tâche
+    $app->get('/tasks/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Tâche n°' . $args['id']);
+        return $response;
+    });
+
+    //routes qui ajoute une tâche
+    $app->post('/tasks', function (Request $request, Response $response) {
+        $response->getBody()->write('Ajout d\'une tâche');
+        return $response;
+    });
+
+    //routes qui modifie une tâche
+    $app->put('/tasks/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Modification de la tâche n°' . $args['id']);
+        return $response;
+    });
+
+    //routes qui supprime une tâche
+    $app->delete('/tasks/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Suppression de la tâche n°' . $args['id']);
+        return $response;
+    });
+
+    //routes qui renvoit les tâches du jour
+    $app->get('/tasks/today', function (Request $request, Response $response) {
+        $response->getBody()->write('Liste des tâches du jour');
+        return $response;
+    });
+
+    //routes qui renvoit les tâches de la semaine
+    $app->get('/tasks/week', function (Request $request, Response $response) {
+        $response->getBody()->write('Liste des tâches de la semaine');
+        return $response;
+    });
+
+    //routes qui renvoit les tâches du mois
+    $app->get('/tasks/month', function (Request $request, Response $response) {
+        $response->getBody()->write('Liste des tâches du mois');
+        return $response;
+    });
+
+    //routes qui renvoit les tâches selon le jour
+    $app->get('/tasks/{day}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Liste des tâches du ' . $args['day']);
+        return $response;
+    });
+
+
+
 };
