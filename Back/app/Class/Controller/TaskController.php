@@ -1,5 +1,11 @@
 <?php
 
+namespace app\Controllers;
+
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\App;
+
 include '../Modele/ITask.php';
 include '../Controller/BDDController.php';
 
@@ -48,7 +54,7 @@ class TaskController
     {
         $bdd = BDDController::getInstance();
         $connect = $bdd->getConnect();
-        $sql = "INSERT INTO task(name,description,id_projet,id_task_parent,color,order)
+        $sql = "INSERT INTO task(name,description,id_projet,id_task_parent,color,'order')
                         VALUES('". $name ."',
                                '". $description."'
                                ,'" . $id_project . "'
@@ -76,7 +82,7 @@ class TaskController
                     id_projet='". $id_project ."',
                     id_task_parent='". $id_task_parent ."',
                     color='". $color ."',
-                    order='". $order ."',
+                    'order'='". $order ."',
                 WHERE id=". $id;
         return $connect->query($sql);
     }

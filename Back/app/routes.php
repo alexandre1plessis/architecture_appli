@@ -72,6 +72,32 @@ return function (App $app) {
         return $response;
     });
 
+    $app->get('/projets', function (Request $request, Response $response) {
+        $response->getBody()->write('Liste des projet ');
+        return $response;
+    });
+
+    $app->get('/projets/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Projet n°' . $args['id']);
+        return $response;
+    });
+
+    $app->post('/projets', function (Request $request, Response $response) {
+        $response->getBody()->write('Ajout d\'un projet');
+        return $response;
+    });
+
+    $app->put('/projets/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Modification du projets' . $args['id']);
+        return $response;
+    });
+
+    //routes qui supprime une tâche
+    $app->delete('/projets/{id}', function (Request $request, Response $response, array $args) {
+        $response->getBody()->write('Suppression de la tâche n°' . $args['id']);
+        return $response;
+    });
+
 
 
 };

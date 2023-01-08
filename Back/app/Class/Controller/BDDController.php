@@ -1,5 +1,7 @@
 <?php
 
+require 'Back/vendor/autoload.php';
+
 class BDDController
 {
     private static $instances = [];
@@ -7,6 +9,8 @@ class BDDController
     private static $connect = null;
     public static $servername = 'localhost:3307';
     public static $ursername = 'root';
+
+
 
     protected function __construct() { }
 

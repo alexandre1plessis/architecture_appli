@@ -57,7 +57,7 @@ class ProjectController
     {
         $bdd = BDDController::getInstance();
         $connect = $bdd->getConnect();
-        $sql = "DELETE FROM project WHERE id=". $id ;
+        $sql = "DELETE FROM projet WHERE id=". $id ;
         return $connect->query($sql);
     }
 
