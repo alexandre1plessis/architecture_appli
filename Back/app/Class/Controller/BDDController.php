@@ -5,7 +5,7 @@ class BDDController
     private static $instances = [];
     private static $password = '';
     private static $connect = null;
-    public static $servername = 'localhost';
+    public static $servername = 'localhost:3307';
     public static $ursername = 'root';
 
     protected function __construct() { }

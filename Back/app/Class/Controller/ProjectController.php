@@ -1,7 +1,7 @@
 <?php
 
 include '../Modele/Project.php';
-include '../Controller/BDDController.php';
+include 'BDDController.php';
 
 class ProjectController
 {
@@ -10,7 +10,16 @@ class ProjectController
      */
     public static function getAllProject(): array
     {
-        return [];
+        $retour = [];
+        $bdd = BDDController::getInstance()->getConnect();
+        $sql = "SELECT *
+                FROM projet"  ;
+        $projets = $bdd->query($sql);
+        foreach ($projets as $projet) {
+            $newProjet = new Project($projet['id'],$projet['name']);
+            $retour[] = $newProjet;
+        }
+        return $retour;
     }
 
     /**
@@ -19,7 +28,12 @@ class ProjectController
      */
     public static function getProjectById(int $id): Project
     {
-        return new Project();
+        $bdd = BDDController::getInstance()->getConnect();
+        $sql = "SELECT *
+                FROM projet
+                WHERE id=" . $id;
+        $projet = $bdd->query($sql);
+        return new Project($projet['id'],$projet['name']);
     }
 
     /**
