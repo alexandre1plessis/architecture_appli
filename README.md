@@ -1,15 +1,15 @@
 # architecture_appli
 
-Voici le projet de To-do list de tâches, afin de pouvoir le déployer il faut s'assurer que les différentes technos nécessaires sont bien présentes :
+Here is the project To-do list of tasks, in order to be able to succeed it must be ensured that the various technologies necessary are present:
 
-- Un ordinateur sous Windows 10
-- PHP 7.4 ou plus
+- A computer running Windows 10
+- PHP 7.4 or higher
 - Angular CLI: 13.2.5
 - Node: 16.13.2
-- Package Manager: npm 8.1.2
+- Package manager: npm 8.1.2
 
-La bdd se trouvant sur un serveur distant, une connexion internet est nécessaire
-Ensuite voici la doc officielle de slim :
+The database is on a remote server, an internet connection is required
+Then here is the official slim doc:
 
 # Slim Framework 4 Skeleton Application
 
