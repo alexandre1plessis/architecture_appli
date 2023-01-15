@@ -13,10 +13,6 @@ export class TaskListComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.taskList = this.taskService.getTaskByDay(Date().toLocaleString());
   }
 
-  addTaskToList(task: Task) {
-    this.taskList.unshift(task);
-  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-task',
@@ -7,10 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
-  @Input() name: string = '';
-  @Input() description: string = '';
-  @Input() color: string = '#FFF';
-  @Input() project: string = '';
+  @Input() task!: Task;
 
   public datetime: number = Date.now();
   constructor() { }

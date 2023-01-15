@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../../models/task.model';
 import { SubtaskService } from '../../services/subtask/subtask.service';
 import { TaskService } from '../../services/task/task.service';
@@ -17,7 +17,8 @@ export class AddTaskComponent implements OnInit {
 
   constructor(
     private subtaskService: SubtaskService,
-    private taskService: TaskService
+    private taskService: TaskService,
+    public dialogRef: MatDialogRef<AddTaskComponent>
   ) { }
 
   ngOnInit(): void {

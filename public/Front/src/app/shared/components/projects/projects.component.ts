@@ -18,15 +18,19 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
     this.listProject = this.projectService.getAllProjects();
   }
-  getProject(id: number): void {
-    this.project.emit(this.projectService.getProjectById(id));
-  }
+  
   addProject(name: string): void {
     this.projectService.saveNewProject(name);
   }
+
+  getProject(id: number): void {
+    this.project.emit(this.projectService.getProjectById(id));
+  }
+
   updateProject(id: number, name: string): void {
     this.projectService.updateProject(id, name);
   }
+  
   deleteProject(id: number): void{
     this.projectService.deleteProject(id);
   }

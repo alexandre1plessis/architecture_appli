@@ -1,1 +1,20 @@
-<p>main-page works!</p>
+<h1>Gestionnaire de tâches</h1>
+
+<div class="main-layout">
+    <div class="header">
+        <div class="searchBar">
+            <app-select-task></app-select-task>
+        </div>
+        <div class="addElement">
+            <button mat-raised-button class="addButton" (click)="openDialog('add-project')">Ajouter un projet</button>
+            <button mat-raised-button class="addButton" (click)="openDialog('add-task')">Ajouter une tache</button>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div *ngFor="let task of taskList">
+            <app-task [task]="task"></app-task>
+        </div>
+    </div>
+</div>
+
